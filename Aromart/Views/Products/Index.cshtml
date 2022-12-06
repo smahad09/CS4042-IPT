@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Aromart.Models.product>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h1 class="text-center">Sniff A Variety of Perfumes!</h1>
+
+
+    @foreach (var item in Model)
+    {
+        <div class=".col-md-6">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="@item.productImg" alt="..." class="productImage" style="width: 40%!important">
+                    <div class="caption">
+                        <h3>@item.productName <span>by @item.productBrand</span></h3>
+                        <p>@item.productDesc</p>
+                        <p class="small">PKR @item.productPrice</p>
+                        <p><a href="/products/details/@item.productId" class="btn btn-primary" role="button">More Details</a> <a href="/order/order/@item.productId" class="btn btn-default" role="button">Buy Me</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

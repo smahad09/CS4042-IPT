@@ -1,0 +1,21 @@
+﻿@model Aromart.Models.product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="center_div">
+    <div class="row" style="border: 1px solid gray">
+        <div class="col-lg-6">
+            <img src="@Model.productImg" style="height: 75vh; border-right: 1px solid black">
+        </div>
+        
+        <div class="col-lg-6">
+            <h1>@Model.productName</h1>
+            <h2>@Model.productBrand</h2>
+            <a href="/order/order/@Model.productId" class="btn btn-lg btn-primary">Buy Now</a>
+        </div>
+
+    </div>
+
+</div>

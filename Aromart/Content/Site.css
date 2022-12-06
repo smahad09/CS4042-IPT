@@ -1,0 +1,61 @@
+﻿
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #777;
+    border-color: #fff
+}
+
+
+
+/*custom css*/
+
+.productImage {
+    width: 40% !important;
+}
+
+input {
+    width: 90%;
+    border-radius: 5px;
+}
+
+.homePage {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('homepage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: whitesmoke;
+    height: 100vh;
+}
+
+.frontButton {
+    color: white;
+    display: block;
+}
+
+.center_div {
+    margin: auto;
+    width: 75%;
+}

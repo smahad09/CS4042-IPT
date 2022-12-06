@@ -1,0 +1,58 @@
+﻿@model Aromart.Models.user
+
+@{
+    ViewBag.Title = "Login";
+    string loginFail = TempData["loginFail"] as string;
+    var user = Session["user"];
+}
+
+<h2>Login</h2>
+
+@if (loginFail != null)
+    {
+        <div class="alert alert-danger" role="alert">@loginFail</div>
+    }
+
+@if (user != null)
+    {
+        <div class="alert alert-light">@user</div>
+    } 
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal center_div">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.userEmail, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Email")
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.userEmail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.userEmail, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.userPwd, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Password")
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.userPwd, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.userPwd, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-4">
+            <input type="submit" value="Login" class="btn btn-lg btn-primary btn-block" />
+        </div>
+    </div>
+</div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
